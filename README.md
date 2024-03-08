@@ -1,5 +1,16 @@
 # Pokedex
 
+## Install
+
+To install clone this repo from my github:
+```shell
+gh repo clone msquinn/bitly-interview
+```
+or 
+```shell
+git clone https://github.com/msquinn/bitly-interview.git
+```
+
 To run the pokedex first install: 
 
 ```shell
