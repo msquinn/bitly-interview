@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { ModeToggle } from "@/components/mode-toggle";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="flex w-full justify-end p-3">
+            <ModeToggle />
+          </div>
+          <main className="flex min-h-screen flex-col items-center justify-between py-12 p-1 sm:px-24">
+            {children}
+          </main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

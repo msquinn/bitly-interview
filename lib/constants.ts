@@ -1,0 +1,1 @@
+export const POKEMON_COUNT_TO_FETCH = 40;
